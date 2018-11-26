@@ -1,5 +1,5 @@
 {
-    "name": "loduis/alegra-php",
+    "name": "jorgadan/alegra-php",
     "description": "Alegra PHP Library",
     "keywords": [
         "alegra",
@@ -9,8 +9,8 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "Loduis Madariaga",
-            "email": "loduis@gmail.com"
+            "name": "Jorge Adan",
+            "email": "systemofadan@hotmail.com"
         }
     ],
     "autoload": {
