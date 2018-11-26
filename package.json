@@ -1,5 +1,5 @@
 {
-  "version": "0.18.9",
+  "version": "0.26.7",
   "devDependencies": {
     "git-release": "^0.6.0"
   },
