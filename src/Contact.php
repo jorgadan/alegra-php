@@ -30,20 +30,27 @@ class Contact extends Resource
      * @var array
      */
     protected $fillable = [
-        'name'             => 'string',
-        'identification'   => 'string',
-        'email'            => 'string',
-        'phonePrimary'     => 'string',
-        'phoneSecondary'   => 'string',
-        'fax'              => 'string',
-        'mobile'           => 'string',
-        'observations'     => 'string',
-        'address'          => Address::class,
-        'type'             => Collection::class,
-        'seller'           => Seller::class,
-        'term'             => Term::class,
-        'priceList'        => Contact\PriceList::class,
-        'internalContacts' => Contact\Internal::collection
+        'name'                 => 'string',
+        'firstName'            => 'string',
+        'secondName'           => 'string',
+        'lastName'             => 'string',
+        'regime'               => 'string',
+        'identification'       => 'string',
+        'identificationObject' => 'string',
+        'email'                => 'string',
+        'phonePrimary'         => 'string',
+        'phoneSecondary'       => 'string',
+        'fax'                  => 'string',
+        'mobile'               => 'string',
+        'observations'         => 'string',
+        'kindOfPerson'         => 'string',
+        'address'              => Address::class,
+        'type'                 => Collection::class,
+        'seller'               => Seller::class,
+        'term'                 => Term::class,
+        'priceList'            => PriceList::class,
+        'internalContacts'     => Contact\Internal::collection,
+        'attachments'          => Support\Attachment::collection
     ];
 
     /**
