@@ -8,11 +8,27 @@ PHP 5.6.11 and later.
 
 ## Composer
 
-You can install the bindings via [Composer](http://getcomposer.org/). Run the following command:
+1. Include in your project `composer.json` the following dependency:
 
-```bash
-composer require "loduis/alegra-php:@dev"
+```yaml
+"require": {
+        ...
+        "jorgadan/alegra-php": "@dev"
+    },
 ```
+
+2. Add a repository key to your project `composer.json`:
+
+```yaml
+"repositories": [
+        {
+            "type": "git",
+            "url": "git@github.com:jorgadan/alegra-php.git"
+        }
+    ],
+```
+
+3. Run `composer update` or `composer install` and you should be getting it
 
 To use the bindings, use Composer's [autoload](https://getcomposer.org/doc/00-intro.md#autoloading):
 
@@ -32,20 +48,6 @@ If you use Composer, these dependencies should be handled automatically. If you 
 
 ## Getting Started
 
-Any resource containts five main methods (**all**, **get**, **create**, **save**, **delete**)
-
-Simple usage looks like:
-
-Your composer.json file
-```json
-{
-    "minimum-stability": "dev",
-    "prefer-stable": true,
-    "require": {
-        "loduis/alegra-php": "1.0.*"
-    }
-}
-```
 
 Your test.php script
 ```php
@@ -73,6 +75,11 @@ print_r($contact);
 
 $contact = new Alegra\Contact;
 $contact->name = 'My second contact';
+//a LEGAL_ENTITY will be created by default
+//to create a PERSON_ENTITY you must add 
+//$contact->firstName = "My";
+//$contact->secondName = "Second";
+//$contact->lastName = "Contact";
 $contact->save(); // Update the contact
 print_r($contact);
 ```
