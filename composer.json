@@ -15,6 +15,7 @@
     ],
     "autoload": {
         "psr-4": {
+            "Illuminate\\": "lib/Illuminate/",
             "Alegra\\": "src/"
         }
     },
@@ -34,8 +35,7 @@
         "phpunit/phpunit": "5.5.*",
         "vlucas/phpdotenv": "^2.2",
         "mockery/mockery": "^0.9.4",
-        "fzaninotto/faker": "^1.6",
-        "loduis/illuminate-api": "^0.5"
+        "fzaninotto/faker": "^1.6"
     },
     "config": {
         "bin-dir": "bin"
@@ -51,12 +51,6 @@
             "dev-master": "1.0-dev"
         }
     },
-    "repositories": [
-        {
-            "type": "git",
-            "url": "git@github.com:loduis/illuminate-api.git"
-        }
-    ],
     "prefer-stable": true,
     "minimum-stability": "dev"
 }
