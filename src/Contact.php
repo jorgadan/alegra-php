@@ -48,9 +48,8 @@ class Contact extends Resource
         'type'                 => Collection::class,
         'seller'               => Seller::class,
         'term'                 => Term::class,
-        'priceList'            => PriceList::class,
-        'internalContacts'     => Contact\Internal::collection,
-        'attachments'          => Support\Attachment::collection
+        'priceList'            => Contact\PriceList::class,
+        'internalContacts'     => Contact\Internal::collection
     ];
 
     /**
