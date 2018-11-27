@@ -69,19 +69,22 @@ trait AttributeFillable
      */
     public function getFillable()
     {
-        if ($fillable = $this->fillable) {
-            if (Arr::isAssoc($fillable)) {
-                return $fillable;
-            }
-
-            $keys = array_values($fillable);
-            $types = array_fill(0, count($keys), 'string');
-
-            return array_combine(
-                $keys,
-                $types
-            );
+        if ($fillable = $this->fillable){
+            throwException(new \Exception("Fillable arrays aren't the same"));
         }
+
+        if (Arr::isAssoc($fillable)) {
+            return $fillable;
+        }
+
+        $keys = array_values($fillable);
+        $types = array_fill(0, count($keys), 'string');
+
+        return array_combine(
+            $keys,
+            $types
+        );
+
     }
 
     /**
@@ -114,7 +117,7 @@ trait AttributeFillable
         // array, which means only those attributes may be set through mass
         // assignment to the model, and all others will just be ignored.
         if (!$this->isFillable($attribute)) {
-            throw new DomainException('You not can set attribute: ' . $attribute);
+            throw new DomainException('You cannot set attribute: ' . $attribute);
         }
     }
 }

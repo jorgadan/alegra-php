@@ -9,6 +9,7 @@ class Address extends \Illuminate\Api\Resource\Model
     protected $fillable = [
         'address'        => 'string',
         'city'           => 'string',
+        'department'     => 'string',
         'street'         => 'string',
         'exteriorNumber' => 'string',
         'interiorNumber' => 'string',
@@ -35,7 +36,7 @@ class Address extends \Illuminate\Api\Resource\Model
         }
 
         if (!Application::isMexico()) {
-            $this->fillable = array_slice($this->fillable, 0, 2, true);
+            $this->fillable = array_slice($this->fillable, 0, 3, true);
         }
 
         parent::__construct($attributes);
@@ -47,6 +48,6 @@ class Address extends \Illuminate\Api\Resource\Model
             return ['*'];
         }
 
-        return ['address', 'city'];
+        return ['address', 'city', 'department'];
     }
 }
