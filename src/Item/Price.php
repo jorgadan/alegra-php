@@ -25,7 +25,8 @@ class Price extends \Illuminate\Api\Resource\Model
      */
     protected $fillable = [
         'price' => 'float',
-        'name'  => 'string'
+        'name'  => 'string',
+        'type'  => 'string'
     ];
 
     /**
@@ -59,6 +60,7 @@ class Price extends \Illuminate\Api\Resource\Model
      * Set mutator of id
      *
      * @param int $value
+     * @return Price
      */
     public function setIdAttribute($value)
     {

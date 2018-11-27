@@ -69,9 +69,7 @@ trait AttributeFillable
      */
     public function getFillable()
     {
-        if ($fillable = $this->fillable){
-            throwException(new \Exception("Fillable arrays aren't the same"));
-        }
+        $fillable = $this->fillable;
 
         if (Arr::isAssoc($fillable)) {
             return $fillable;
