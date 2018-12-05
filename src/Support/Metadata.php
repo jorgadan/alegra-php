@@ -29,4 +29,15 @@ trait Metadata
 
         return $collection;
     }
+
+    public static function allArray($params = [])
+    {
+        $response = static::requestToArray('GET', null, $params);
+
+        if (Arr::has($response, 'metadata')) {
+            $response = Arr::pull($response, 'data');
+        }
+
+        return $response;
+    }
 }

@@ -26,6 +26,13 @@ trait AttributeFillable
     {
         $this->attributes = [];
 
+        //nameObject also contained in name attribute
+        if(isset($attributes['nameObject'])){
+            unset($attributes['nameObject']);
+        }
+        if(isset($attributes['identificationObject']) && $attributes['identificationObject']['type']){
+            $attributes['idType']= $attributes['identificationObject']['type'];
+        }
         foreach ($attributes as $key => $value) {
             $this->setAttribute($key, $value);
         }

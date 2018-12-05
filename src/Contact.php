@@ -37,6 +37,7 @@ class Contact extends Resource
         'regime'               => 'string',
         'identification'       => 'string',
         'identificationObject' => 'string',
+        'idType'               => 'string',
         'email'                => 'string',
         'phonePrimary'         => 'string',
         'phoneSecondary'       => 'string',
