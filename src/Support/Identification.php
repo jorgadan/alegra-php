@@ -6,7 +6,8 @@ class Identification extends \Illuminate\Api\Resource\Model
 {
     protected $fillable = [
         'type'   => 'string',
-        'number' => 'string'
+        'number' => 'string',
+        'dv'     => 'string'
     ];
 
     /**
@@ -20,7 +21,8 @@ class Identification extends \Illuminate\Api\Resource\Model
         if (is_string($attributes)) {
             $attributes = [
                 'number' => $attributes,
-                'type'   => ''
+                'type'   => '',
+                'dv'     => ''
             ];
         }
 

@@ -36,7 +36,6 @@ trait AttributeFillable
             $attributes['identificationObject'] = $idObj;
         }
         foreach ($attributes as $key => $value) {
-            if($key == "dv") continue;
             $this->setAttribute($key, $value);
         }
 
