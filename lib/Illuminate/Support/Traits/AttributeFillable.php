@@ -2,6 +2,7 @@
 
 namespace Illuminate\Support\Traits;
 
+use Alegra\Support\Identification;
 use DomainException;
 use Illuminate\Support\Str;
 use Illuminate\Support\Arr;
@@ -30,8 +31,9 @@ trait AttributeFillable
         if(isset($attributes['nameObject'])){
             unset($attributes['nameObject']);
         }
-        if(isset($attributes['identificationObject']) && $attributes['identificationObject']['type']){
-            $attributes['idType']= $attributes['identificationObject']['type'];
+        if(!isset($attributes['identificationObject']) && isset($attributes['idType'])){
+            $idObj = new Identification(["type"=>$attributes['idType'], "number"=>$attributes['identification']]);
+            $attributes['identificationObject'] = $idObj;
         }
         foreach ($attributes as $key => $value) {
             $this->setAttribute($key, $value);

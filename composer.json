@@ -29,6 +29,7 @@
         "guzzlehttp/guzzle": "^6.2",
         "illuminate/support": "^5.4",
         "nesbot/carbon": "~1.21",
+        "ext-json": "*",
         "psy/psysh": "@stable"
     },
     "require-dev": {

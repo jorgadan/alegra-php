@@ -3,6 +3,7 @@
 namespace Alegra;
 
 use Alegra\Support\Address;
+use Alegra\Support\Identification;
 use Illuminate\Support\Collection;
 
 class Contact extends Resource
@@ -36,7 +37,7 @@ class Contact extends Resource
         'lastName'             => 'string',
         'regime'               => 'string',
         'identification'       => 'string',
-        'identificationObject' => 'string',
+        'identificationObject' => Identification::class,
         'idType'               => 'string',
         'email'                => 'string',
         'phonePrimary'         => 'string',
