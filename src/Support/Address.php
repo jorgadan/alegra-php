@@ -10,11 +10,11 @@ class Address extends \Illuminate\Api\Resource\Model
         'address'        => 'string',
         'city'           => 'string',
         'department'     => 'string',
+        'country'        => 'string',
         'street'         => 'string',
         'exteriorNumber' => 'string',
         'interiorNumber' => 'string',
         'colony'         => 'string',
-        'country'        => 'string',
         'locality'       => 'string',
         'municipality'   => 'string',
         'state'          => 'string',
@@ -36,7 +36,7 @@ class Address extends \Illuminate\Api\Resource\Model
         }
 
         if (!Application::isMexico()) {
-            $this->fillable = array_slice($this->fillable, 0, 3, true);
+            $this->fillable = array_slice($this->fillable, 0, 4, true);
         }
 
         parent::__construct($attributes);
@@ -48,6 +48,6 @@ class Address extends \Illuminate\Api\Resource\Model
             return ['*'];
         }
 
-        return ['address', 'city', 'department'];
+        return ['address', 'city', 'department', 'country'];
     }
 }
