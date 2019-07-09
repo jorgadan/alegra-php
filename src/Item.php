@@ -12,6 +12,7 @@ final class Item extends Resource
     protected $fillable = [
         'name'        => 'string',
         'description' => 'string',
+        'quantity'    => 'string',
         'reference'   => 'string',
         'status'      => 'string',
         'category'    => Category::class,
